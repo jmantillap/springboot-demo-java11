@@ -39,7 +39,7 @@ public class ErrorResponseDTO implements Serializable {
 
 	private String stackTrace;
 
-	private Object data;	
+	private transient Object data;	
 
 	public ErrorResponseDTO() {
 		timestamp = new Date();

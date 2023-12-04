@@ -144,3 +144,10 @@ Respuesta del servicio:
 ## Postman
 Importar el archivo que se encuentra en la carpeta /postman/prueba-tecnica.postman_collection.json
 
+
+## Swagger
+* Al desplegar la app el swagger se podra acceder en la siguiente url
+
+    http://localhost:8081/swagger-ui/index.html
+
+

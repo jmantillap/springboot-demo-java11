@@ -1,5 +1,7 @@
 package work.javiermantilla.proyecto.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -11,18 +13,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import work.javiermantilla.proyecto.dto.DataListDTO;
 import work.javiermantilla.proyecto.dto.ErrorResponseDTO;
 import work.javiermantilla.proyecto.services.IRequiredRemainderServices;
 
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 @RestController
 @RequestMapping("api/v1")
-public class AlgorithmControlller {
+public class AlgorithmController {
 
 	@Autowired
 	private IRequiredRemainderServices remainderServices;
@@ -40,6 +43,12 @@ public class AlgorithmControlller {
 
 	}	
 	
+	@Operation(summary = "required-remainder", description = "Servicio GET")
+	@ApiResponse(responseCode = "200", description = "OK",
+	content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+	schema = @Schema(implementation = ArrayList.class)))
+	@ApiResponse(responseCode = "500", description = "ERROR INTERNO",content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE
+	,schema = @Schema(implementation = ErrorResponseDTO.class)))
 	@GetMapping(value = "required-remainder", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> requiredRemainderGetArray(@RequestParam(name = "data") String[] data) {
 		try {

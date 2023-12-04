@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @ComponentScan(basePackages = {
         "work.javiermantilla.proyecto"        
 })
-public class AlgorithmControlllerTest {
+public class AlgorithmControllerTest {
 	@Autowired
 	private MockMvc mockMvc;	
 	private String inputJson;
