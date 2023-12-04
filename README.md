@@ -1,4 +1,4 @@
-# Prueba Técnica
+# Prueba 
 
 ### Generar el jar
 La aplicación esta construida en java 11 y springboot 2.1.3
@@ -135,10 +135,10 @@ Respuesta del servicio:
 
 ## Docker
 
-* docker build -t java-api-prueba-tecnica .
+* docker build -t java-api-prueba .
 
 
-* docker run -d -p 8081:8081 --name prueba-tecnica java-api-prueba-tecnica
+* docker run -d -p 8081:8081 --name prueba-java11 java-api-prueba
 
 
 ## Postman
